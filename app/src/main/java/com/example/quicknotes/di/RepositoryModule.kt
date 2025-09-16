@@ -1,8 +1,8 @@
 package com.example.quicknotes.di
 
 import com.example.quicknotes.data.local.dao.NoteDao
-import com.example.quicknotes.data.local.dao.UserDao
 import com.example.quicknotes.data.repository.NoteRepositoryImpl
+import com.example.quicknotes.data.repository.UserRepositoryImpl
 import com.example.quicknotes.domain.repository.NoteRepository
 import com.example.quicknotes.domain.repository.UserRepository
 import com.google.firebase.auth.FirebaseAuth
@@ -27,9 +27,7 @@ object RepositoryModule {
     @Provides
     @Singleton
     fun provideUserRepository(
-        auth: FirebaseAuth,
-        userDao: UserDao,
-        firestore: FirebaseFirestore
-    ): UserRepository = UserRepositoryImpl(auth, userDao, firestore)
+        auth: FirebaseAuth
+    ): UserRepository = UserRepositoryImpl(auth)
 
 }
