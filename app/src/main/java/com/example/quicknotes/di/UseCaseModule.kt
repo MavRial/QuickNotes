@@ -24,8 +24,8 @@ object UseCaseModule {
         UpdateNoteUseCase(noteRepository)
 
     @Provides
-    fun provideDeleteNoteUseCase(noteRepository: NoteRepository) =
-        DeleteNoteUseCase(noteRepository)
+    fun provideDeleteAllNotesUseCase(noteRepository: NoteRepository) =
+        DeleteAllNotesUseCase(noteRepository)
 
     @Provides
     fun provideSignInUseCase(userRepository: UserRepository) =
