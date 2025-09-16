@@ -4,6 +4,7 @@ plugins {
     alias(libs.plugins.kotlinCompose)
     alias(libs.plugins.hiltAndroid)
     alias(libs.plugins.google.gms.google.services)
+    alias(libs.plugins.firebase.crashlytics)
     kotlin("kapt")
 
 }

@@ -8,11 +8,13 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import androidx.compose.material3.Icon
 import androidx.compose.material3.IconButton
-import androidx.compose.ui.graphics.Color
 import androidx.compose.material.icons.Icons
 import androidx.compose.material.icons.filled.Delete
 import androidx.compose.material.icons.filled.Edit
 import com.example.quicknotes.domain.model.Note
+import com.example.quicknotes.ui.theme.Accent
+import com.example.quicknotes.ui.theme.BlueDark
+import com.example.quicknotes.ui.theme.ErrorColor
 
 @Composable
 fun NoteItem(
@@ -23,19 +25,19 @@ fun NoteItem(
 ) {
     AppCard(modifier = modifier) {
         Column(modifier = Modifier.fillMaxWidth()) {
-            Text(text = note.title, style = MaterialTheme.typography.titleMedium)
+            Text(text = note.title, style = MaterialTheme.typography.titleMedium, color = BlueDark)
             Spacer(modifier = Modifier.height(4.dp))
-            Text(text = note.content, style = MaterialTheme.typography.bodyMedium)
+            Text(text = note.content, style = MaterialTheme.typography.bodyMedium, color = BlueDark)
             Spacer(modifier = Modifier.height(8.dp))
             Row(
                 horizontalArrangement = Arrangement.End,
                 modifier = Modifier.fillMaxWidth()
             ) {
                 IconButton(onClick = onEdit) {
-                    Icon(Icons.Default.Edit, contentDescription = "Edit Note", tint = Color.Gray)
+                    Icon(Icons.Default.Edit, contentDescription = "Edit Note", tint = Accent)
                 }
                 IconButton(onClick = onDelete) {
-                    Icon(Icons.Default.Delete, contentDescription = "Delete Note", tint = Color.Red)
+                    Icon(Icons.Default.Delete, contentDescription = "Delete Note", tint = ErrorColor)
                 }
             }
         }

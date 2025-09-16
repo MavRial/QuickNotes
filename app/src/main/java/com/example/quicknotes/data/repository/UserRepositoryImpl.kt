@@ -3,6 +3,7 @@ package com.example.quicknotes.data.repository
 import com.example.quicknotes.domain.model.User
 import com.example.quicknotes.domain.repository.UserRepository
 import com.google.firebase.auth.FirebaseAuth
+import com.google.firebase.auth.GoogleAuthProvider
 import kotlinx.coroutines.tasks.await
 import javax.inject.Inject
 
@@ -10,8 +11,9 @@ class UserRepositoryImpl @Inject constructor(
     private val auth: FirebaseAuth
 ) : UserRepository {
 
-    override suspend fun signIn(email: String, password: String): Result<User> = runCatching {
-        val result = auth.signInWithEmailAndPassword(email, password).await()
+    override suspend fun signInWithGoogle(idToken: String): Result<User> = runCatching {
+        val credential = GoogleAuthProvider.getCredential(idToken, null)
+        val result = auth.signInWithCredential(credential).await()
         val firebaseUser = result.user ?: throw Exception("User is null")
         User(
             id = firebaseUser.uid,

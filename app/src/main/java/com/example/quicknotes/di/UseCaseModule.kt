@@ -6,7 +6,7 @@ import com.example.quicknotes.domain.useCase.noteRepo.AddNoteUseCase
 import com.example.quicknotes.domain.useCase.noteRepo.DeleteAllNotesUseCase
 import com.example.quicknotes.domain.useCase.noteRepo.GetNotesUseCase
 import com.example.quicknotes.domain.useCase.noteRepo.UpdateNoteUseCase
-import com.example.quicknotes.domain.useCase.userRepo.SignInUseCase
+import com.example.quicknotes.domain.useCase.userRepo.SignInWithGoogleUseCase
 import com.example.quicknotes.domain.useCase.userRepo.SignOutUseCase
 import dagger.Module
 import dagger.Provides
@@ -37,7 +37,7 @@ object UseCaseModule {
     // UserRepository
     @Provides
     fun provideSignInUseCase(userRepository: UserRepository) =
-        SignInUseCase(userRepository)
+        SignInWithGoogleUseCase(userRepository)
 
     @Provides
     fun provideSignOutUseCase(userRepository: UserRepository) =
