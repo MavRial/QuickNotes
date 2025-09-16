@@ -5,12 +5,14 @@ import androidx.compose.foundation.layout.fillMaxWidth
 import androidx.compose.foundation.shape.RoundedCornerShape
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
-import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.TextFieldDefaults
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.unit.dp
+import com.example.quicknotes.ui.theme.Accent
+import com.example.quicknotes.ui.theme.BlueDark
+import com.example.quicknotes.ui.theme.SoftYellow
 
 @Composable
 fun AppTextField(
@@ -18,8 +20,8 @@ fun AppTextField(
     onValueChange: (String) -> Unit,
     label: String = "",
     @SuppressLint("ModifierParameter") modifier: Modifier = Modifier,
-    backgroundColor: Color = MaterialTheme.colorScheme.surface,
-    textColor: Color = MaterialTheme.colorScheme.onSurface,
+    backgroundColor: Color = SoftYellow,
+    textColor: Color = BlueDark,
     shape: RoundedCornerShape = RoundedCornerShape(12.dp)
 ) {
     OutlinedTextField(
@@ -32,16 +34,16 @@ fun AppTextField(
             focusedTextColor = textColor,
             unfocusedTextColor = textColor,
             disabledTextColor = textColor.copy(alpha = 0.5f),
-            cursorColor = MaterialTheme.colorScheme.primary,
+            cursorColor = Accent,
             focusedContainerColor = backgroundColor,
             unfocusedContainerColor = backgroundColor,
             disabledContainerColor = backgroundColor.copy(alpha = 0.5f),
-            focusedIndicatorColor = MaterialTheme.colorScheme.primary,
-            unfocusedIndicatorColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f),
-            disabledIndicatorColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.2f),
-            focusedLabelColor = MaterialTheme.colorScheme.primary,
-            unfocusedLabelColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.7f),
-            disabledLabelColor = MaterialTheme.colorScheme.onSurface.copy(alpha = 0.5f)
+            focusedIndicatorColor = BlueDark,
+            unfocusedIndicatorColor = BlueDark.copy(alpha = 0.5f),
+            disabledIndicatorColor = BlueDark.copy(alpha = 0.2f),
+            focusedLabelColor = BlueDark,
+            unfocusedLabelColor = BlueDark.copy(alpha = 0.7f),
+            disabledLabelColor = BlueDark.copy(alpha = 0.5f)
         )
     )
 }
