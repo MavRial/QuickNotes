@@ -15,7 +15,7 @@ interface NoteDao {
     suspend fun getNotes(userId: String): List<NoteEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
-    suspend fun inset(note: NoteEntity): Long
+    suspend fun insert(note: NoteEntity): Long
 
     @Update
     suspend fun update(note: NoteEntity)
