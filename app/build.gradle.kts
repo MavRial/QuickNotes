@@ -75,11 +75,15 @@ dependencies {
     // ROOM
     implementation(libs.androidx.room.runtime)
     implementation(libs.androidx.room.ktx)
+    implementation(libs.androidx.navigation.compose.jvmstubs)
     kapt(libs.androidx.room.compiler)
 
     // HILT
     implementation(libs.hilt.android)
     kapt(libs.hilt.compiler)
+
+    //NAVIGATION
+    implementation(libs.androidx.hilt.navigation.compose)
 
     // COROUTINES
     implementation(libs.kotlinx.coroutines.core)
