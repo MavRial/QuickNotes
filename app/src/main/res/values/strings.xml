@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">QuickNotes</string>
+    <string name="default_web_client_id"><![CDATA[<string name=\"default_web_client_id\">483123589253-oca3g4umb5ibvpkdofgt1cu5ikbb53k2.apps.googleusercontent.com</string>]]></string>
 </resources>
